@@ -32,8 +32,8 @@ pipeline{
         stage('Deploy Docker Image') {
             steps {
                 script {
-                 withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
-                    sh 'docker login -u dsrdsr8 -p ${fsdfs}'
+                 withCredentials([string(credentialsId: 'dockerHub', variable: 'dockerHubPwd')]) {
+                    sh 'docker login -u dsrdsr8 -p ${Rediffmail-1}'
                  }  
                  sh 'docker push devopshint/my-app-1.0'
                 }
