@@ -33,7 +33,7 @@ pipeline{
             steps {
                 script {
                  withCredentials([string(credentialsId: 'dockerHub', variable: 'dockerHubPwd')]) {
-                    sh 'docker login -u dsrdsr8 -p ${Rediffmail-1}'
+                    sh 'docker login -u dsrdsr8 -p ${sf1}'
                  }  
                  sh 'docker push devopshint/my-app-1.0'
                 }
