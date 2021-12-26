@@ -29,15 +29,12 @@ pipeline{
                 }
             }
         }
-        stage('Deploy Docker Image') {
-            steps {
-                script {
-                 withCredentials([string(credentialsId: 'dockerHub', variable: 'dockerHubPwd')]) {
-                    sh 'docker login -u dsrdsr8 -p ${sf1}'
-                 }  
-                 sh 'docker push devopshint/my-app-1.0'
-                }
-            }
+      stage('Push Docker Image'){
+        withCredentials([string(credentialsId: 'Docker_Hub_Pwd_Fin', variable: 'Docker_Hub_Pwd_Fin')]) {
+          sh "docker login -u dsrdsr8 -p ${Docker_Hub_Pwd_Fin}"
         }
+        sh 'docker push devopshint/my-app-1.0'
+     }
+	    
     }
 }
