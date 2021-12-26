@@ -37,7 +37,7 @@ pipeline{
 	  echo 'login successful'
         }
         echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
-	sh 'docker push docker_img/my-app-1.0'
+	sh 'docker push docker_img/my-app-1.0:latest'
      }
 	   } 
 	    
