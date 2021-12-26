@@ -38,7 +38,7 @@ pipeline{
 	       
 	echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
 	sh 'docker image ls'
-	sh 'docker push repoj/my-app-web'
+	sh 'docker push repoj/my-app-web:latest'
       }
         
      }
