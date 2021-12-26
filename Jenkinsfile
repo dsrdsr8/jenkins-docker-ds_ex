@@ -36,7 +36,7 @@ pipeline{
           sh "docker login -u dsrdsr8 -p ${Docker_Hub_Pwd_Fin}"
 	  echo 'login successful'
         }
-        echo 'sh docker push devopshint/my-app-1.0--- didn't worked'
+        echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
 	sh 'docker push dsrdsr8/docker_img:my-app-1.0'
      }
 	   } 
