@@ -38,7 +38,7 @@ pipeline{
 		  {
        	sh "docker login -u ${githubuser} -p ${githubpassword}"
 	sh 'docker image ls'
-	sh 'docker push dsrdsr8/repoj'
+	sh 'docker push dsrdsr8/repoj/my-app-web:latest'
 	         }
         
                }
