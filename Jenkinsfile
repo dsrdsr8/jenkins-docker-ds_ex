@@ -34,8 +34,10 @@ pipeline{
 	  {
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd_Fin', variable: 'Docker_Hub_Pwd_Fin')]) {
           sh "docker login -u dsrdsr8 -p ${Docker_Hub_Pwd_Fin}"
+	  echo 'login successful'
         }
-        sh 'docker push devopshint/my-app-1.0'
+        echo 'sh docker push devopshint/my-app-1.0--- didn't worked'
+	sh 'docker push dsrdsr8/docker_img:my-app-1.0'
      }
 	   } 
 	    
