@@ -38,7 +38,7 @@ pipeline{
 	       
 	echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
 	sh 'docker image ls'
-	sh 'docker push docker.io/docker_img/my-app-1.0:latest'
+	sh 'docker push docker_img/my-app-1.0:latest'
       }
         
      }
