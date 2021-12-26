@@ -26,7 +26,7 @@ pipeline{
             steps {
                 script {
                	sh 'docker build -t my-app-web:latest .'
-		sh 'docker tag my-app-web dsrdsr/my-app-web:latest'
+		sh 'docker tag my-app-web dsrdsr8/my-app-web:latest'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline{
 		  {
        	sh "docker login -u ${githubuser} -p ${githubpassword}"
 	sh 'docker image ls'
-	sh 'docker push dsrdsr/my-app-web'
+	sh 'docker push dsrdsr8/my-app-web'
 	         }
         
                }
