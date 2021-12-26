@@ -25,8 +25,8 @@ pipeline{
 		{
             steps {
                 script {
-                  sh 'docker build -t my-app-web:latest .'
-				  sh 'docker tag my-app-web repoj/my-app-web:latest'
+               	sh 'docker build -t my-app-web:latest .'
+		sh 'docker tag my-app-web repoj/my-app-web:latest'
                 }
             }
         }
