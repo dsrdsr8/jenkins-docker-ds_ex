@@ -25,7 +25,7 @@ pipeline{
 		{
             steps {
                 script {
-                  sh 'docker build -t docker_img/my-app-1.0:latest .'
+                  sh 'docker build -t repoj/my-app-web .'
 			
                 }
             }
@@ -38,7 +38,7 @@ pipeline{
 	       
 	echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
 	sh 'docker image ls'
-	sh 'docker push docker_img/my-app-1.0:latest'
+	sh 'docker push repoj/my-app-web'
       }
         
      }
