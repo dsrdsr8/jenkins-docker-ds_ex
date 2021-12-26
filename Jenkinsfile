@@ -30,18 +30,18 @@ pipeline{
                 }
             }
         }
-     stage('Push Docker Image'){
+ stage('Push Docker Image'){
 	  steps
 	  {
-        withCredentials([string(credentialsId: 'Docker_Hub_Pwd_Fin', variable: 'Docker_Hub_Pwd_Fin')]) {
-          sh "docker login -u dsrdsr8 -p ${Docker_Hub_Pwd_Fin}"
-	  echo 'login successful'
-        }
+       withCredentials([usernamePassword(credentialsId: 'uidpwd_method', passwordVariable: 'githubpassword', usernameVariable: 'githubuser')]) {
+       sh "docker login -u ${githubuser} -p ${githubpassword}"
+      }
         echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
 	sh 'docker image ls'
 	sh 'docker push docker_img/my-app-1.0'
      }
-	   } 
+	                     } 
+
 	    
     }
 }
