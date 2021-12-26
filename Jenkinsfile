@@ -25,24 +25,24 @@ pipeline{
 		{
             steps {
                 script {
-                  sh 'docker build -t repoj/my-app-web .'
-			
+                  sh 'docker build -t my-app-web:latest .'
+				  sh 'docker tag my-app-web repoj/my-app-web:latest'
                 }
             }
         }
- stage('Push Docker Image'){
-	  steps
-	  {
-       withCredentials([usernamePassword(credentialsId: 'uidpwd_method', passwordVariable: 'githubpassword', usernameVariable: 'githubuser')]) {
-       sh "docker login -u ${githubuser} -p ${githubpassword}"
-	       
-	echo 'sh docker push devopshint/my-app-1.0--- didnt worked'
+	    
+ 	stage('Push Docker Image')
+	    {
+	  steps {
+       withCredentials([usernamePassword(credentialsId: 'uidpwd_method', passwordVariable: 'githubpassword', usernameVariable: 'githubuser')]) 
+		  {
+       	sh "docker login -u ${githubuser} -p ${githubpassword}"
 	sh 'docker image ls'
 	sh 'docker push repoj/my-app-web:latest'
-      }
+	         }
         
-     }
-	                     } 
+               }
+	   } 
 
 	    
     }
